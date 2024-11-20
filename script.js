@@ -13,6 +13,6 @@ window.addEventListener("load", function () {
 
     // Create and append the 16 blocks to main div container
     for (let i = 0; i < 16; i++) {
-        divGrid.appendChild(divBlock);
+        divGrid.append(divBlock.cloneNode());
     }
 });
