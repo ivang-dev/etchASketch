@@ -2,5 +2,17 @@
     background: blue;
     width: 20px;
     height: 20px;
-    border: 15px black;
+    border: 5px solid white;
+    flex: 1;
+}
+
+.divRow {
+    display: flex;
+    flex-direction: row;
+}
+
+#divGrid {
+    display: flex;
+    border: 5px solid black;
+    flex-direction: column;
 }
