@@ -31,3 +31,12 @@ window.addEventListener("load", function () {
     }
 
 });
+
+const divCell = document.querySelectorAll(".divBlock");
+
+// Event listener for the mouse over event
+divCell.forEach(cell => {
+    cell.addEventListener("mouseover", function () {
+        cell.style.backgroundColor = "red";
+    })
+})
