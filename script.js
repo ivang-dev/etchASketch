@@ -1,7 +1,3 @@
-// Constants for the rows and columns
-const numOfRows = 16;
-const numOfCols = 16;
-
 // Create the selector for the main div grid
 const divGrid = document.querySelector("#divGrid");
 
@@ -17,8 +13,11 @@ divGrid.addEventListener("mouseover", function (e) {
 
 // Event listener for the full page to load
 window.addEventListener("load", function () {
+    // Convert user input into integer
+    parseInt(newGridSize, 10);
+
     // Outer for loop for the row divs
-    for (let i = 0; i <numOfRows; i++) {
+    for (let i = 0; i < newGridSize; i++) {
         // Create div to become the rows
         const divRow = document.createElement("div");
 
@@ -26,7 +25,7 @@ window.addEventListener("load", function () {
         divRow.className = "divRow";
 
         // Inner loop for the columns/cells in each row
-        for (let j = 0; j < numOfCols; j++) {
+        for (let j = 0; j < newGridSize; j++) {
             // Create basic div element before multiplying by 16
             const divBlock = document.createElement("div");
 
