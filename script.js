@@ -36,5 +36,12 @@ window.addEventListener("load", function () {
         // Append the row to the main grid
         divGrid.append(divRow);
     }
-
 });
+
+// Select grid size change button
+const gridSizeBtn = document.querySelector("#sizeChange");
+
+// Event listener for gridSizeBtn
+gridSizeBtn.addEventListener("click", function () {
+    window.alert("test");
+})
