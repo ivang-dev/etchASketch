@@ -47,4 +47,7 @@ const gridSizeBtn = document.querySelector("#sizeChange");
 // Event listener for gridSizeBtn
 gridSizeBtn.addEventListener("click", function () {
     newGridSize = prompt("Enter a number for the new grid size, max 100", "16");
+    while (isNaN(parseInt(newGridSize, 10))) {
+        newGridSize = prompt("Please enter a number, max 100", "16");
+    }
 })
