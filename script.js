@@ -5,6 +5,13 @@ const numOfCols = 16;
 // Create the selector for the main div grid
 const divGrid = document.querySelector("#divGrid");
 
+// Event listener for the whole grid, checks for divBlock
+divGrid.addEventListener("mouseover", function (e) {
+    if (e.target.classList.contains("divBlock")) {
+        e.target.style.backgroundColor = "red";
+    }
+});
+
 // Event listener for the full page to load
 window.addEventListener("load", function () {
     // Outer for loop for the row divs
@@ -31,12 +38,3 @@ window.addEventListener("load", function () {
     }
 
 });
-
-const divCell = document.querySelectorAll(".divBlock");
-
-// Event listener for the mouse over event
-divCell.forEach(cell => {
-    cell.addEventListener("mouseover", function () {
-        cell.style.backgroundColor = "red";
-    })
-})
