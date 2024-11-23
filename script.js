@@ -1,3 +1,7 @@
+// Constants for the rows and columns
+const numOfRows = 16;
+const numOfCols = 16;
+
 // Create the selector for the main div grid
 const divGrid = document.querySelector("#divGrid");
 
@@ -13,11 +17,8 @@ divGrid.addEventListener("mouseover", function (e) {
 
 // Event listener for the full page to load
 window.addEventListener("load", function () {
-    // Convert user input into integer
-    parseInt(newGridSize, 10);
-
     // Outer for loop for the row divs
-    for (let i = 0; i < newGridSize; i++) {
+    for (let i = 0; i <numOfRows; i++) {
         // Create div to become the rows
         const divRow = document.createElement("div");
 
@@ -25,7 +26,7 @@ window.addEventListener("load", function () {
         divRow.className = "divRow";
 
         // Inner loop for the columns/cells in each row
-        for (let j = 0; j < newGridSize; j++) {
+        for (let j = 0; j < numOfCols; j++) {
             // Create basic div element before multiplying by 16
             const divBlock = document.createElement("div");
 
@@ -49,4 +50,33 @@ gridSizeBtn.addEventListener("click", function () {
     while (isNaN(parseInt(newGridSize, 10))) {
         newGridSize = prompt("Please enter a number, max 100", "16");
     }
+
+    // Remove all children from divGrid
+    while (divGrid.firstChild){
+        divGrid.removeChild(divGrid.firstChild);
+    }
+
+    // Reapply logic from window load to create the new grid
+        // Outer for loop for the row divs
+        for (let i = 0; i < newGridSize; i++) {
+            // Create div to become the rows
+            const divRow = document.createElement("div");
+
+            // Add class to row divs
+            divRow.className = "divRow";
+
+            // Inner loop for the columns/cells in each row
+            for (let j = 0; j < newGridSize; j++) {
+                // Create basic div element before multiplying by 16
+                const divBlock = document.createElement("div");
+
+                // Add class to these divs
+                divBlock.className = "divBlock";
+
+                // Append to the row divs
+                divRow.append(divBlock);
+            }
+            // Append the row to the main grid
+            divGrid.append(divRow);
+        }
 })
