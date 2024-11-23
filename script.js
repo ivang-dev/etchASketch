@@ -5,6 +5,9 @@ const numOfCols = 16;
 // Create the selector for the main div grid
 const divGrid = document.querySelector("#divGrid");
 
+// Variable to hold the number for new grid size
+let newGridSize = "";
+
 // Event listener for the whole grid, checks for divBlock
 divGrid.addEventListener("mouseover", function (e) {
     if (e.target.classList.contains("divBlock")) {
@@ -43,5 +46,5 @@ const gridSizeBtn = document.querySelector("#sizeChange");
 
 // Event listener for gridSizeBtn
 gridSizeBtn.addEventListener("click", function () {
-    window.alert("test");
+    newGridSize = prompt("Enter a number for the new grid size, max 100", "16");
 })
