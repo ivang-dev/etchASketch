@@ -46,9 +46,17 @@ const gridSizeBtn = document.querySelector("#sizeChange");
 
 // Event listener for gridSizeBtn
 gridSizeBtn.addEventListener("click", function () {
+    // Prompt for the new size of the grid, with a default value of 16
     newGridSize = prompt("Enter a number for the new grid size, max 100", "16");
+
+    // Validation to make sure the input is a number
     while (isNaN(parseInt(newGridSize, 10))) {
         newGridSize = prompt("Please enter a number, max 100", "16");
+    }
+
+    // Validation to make sure the number is no bigger than 100
+    while (parseInt(newGridSize, 10) > 100) {
+        newGridSize = prompt("Please enter a number less than or equal to 100", "16");
     }
 
     // Remove all children from divGrid
