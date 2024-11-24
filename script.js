@@ -11,7 +11,7 @@ let newGridSize = "";
 // Event listener for the whole grid, checks for divBlock
 divGrid.addEventListener("mouseover", function (e) {
     if (e.target.classList.contains("divBlock")) {
-        e.target.style.backgroundColor = "red";
+        e.target.style.backgroundColor = "black";
     }
 });
 
